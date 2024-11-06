@@ -1,0 +1,210 @@
+/* +++++++++++++++++++++++++++GLOBAL+++++++++++++++++++++++++++++ */
+p {
+    font-family: "Nunito Sans", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 3.75rem;
+}
+
+:root {
+    --main-color: #E65F78;
+}
+
+/* +++++++++++++++++++++++++++HEADER+++++++++++++++++++++++++++++ */
+#home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(./images/header-bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.box {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    transform: translateX(-50%);
+    border: solid #fff 1px;
+    width: 20px;
+    height: 40px;
+    border-radius: 10px;
+    animation: moving 2s infinite ease-in-out;
+
+    .dot {
+        position: absolute;
+        left: 50%;
+        top: 60%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        width: 4px;
+        height: 8px;
+    }
+}
+
+@keyframes moving {
+    0%{
+        bottom:50px;
+    }
+    10%{
+        bottom:100px;
+    }
+    20%{
+        bottom:50px;
+    }
+    30%{
+        bottom:80px;
+    }
+    40%{
+        bottom:50px;
+    }
+    50%{
+        bottom:70px;
+    }
+    60%{
+        bottom:50px;
+    }
+    70%{
+        bottom:60px;
+    }
+    80%{
+        bottom:50px;
+    }
+    90%{
+        bottom:50px;
+    }
+    100%{
+        bottom:50px;
+    }
+}
+
+/* +++++++++++++++++++++++++++ABOUT+++++++++++++++++++++++++++++ */
+#about {
+    h3 strong {
+        color: var(--main-color);
+    }
+
+    i,
+    i .border-secondary {
+        transition: color 1s, border-color 1s;
+    }
+
+    i:hover,
+    i .border-secondary:hover {
+        border-color: var(--main-color) !important;
+        color: var(--main-color);
+    }
+}
+
+/* +++++++++++++++++++++++++++Client+++++++++++++++++++++++++++++ */
+#client {
+    i {
+        color: var(--main-color);
+    }
+
+    img {
+        width: 5%;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--main-color);
+}
+
+.carousel-indicators {
+    bottom: -50px;
+}
+
+/* +++++++++++++++++++++++++++PORTFOLIO&NAVBAR+++++++++++++++++++++++++++++ */
+.nav-pills .nav-link.active {
+    background-color: var(--main-color);
+}
+
+.nav-link {
+    color: #000;
+
+    &:hover {
+        color: var(--main-color) !important;
+    }
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--main-color);
+}
+
+#portfolio {
+    .images {
+        position: relative;
+        overflow: hidden;
+
+        .image-text {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            right: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 1s;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:hover .text {
+                top: 50%;
+            }
+
+            .text {
+                text-align: center;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: top 1s;
+            }
+
+        }
+
+        &:hover img {
+            transform: scale(1.5);
+        }
+
+        img {
+            transition: transform 1s;
+        }
+    }
+}
+
+/* +++++++++++++++++++++++++++BLOG+++++++++++++++++++++++++++++ */
+#blog {
+    .item-text span strong {
+        color: var(--main-color);
+    }
+}
+
+/* +++++++++++++++++++++++++++CONTACT+++++++++++++++++++++++++++++ */
+#contact {
+
+    i {
+        color: var(--main-color);
+    }
+
+    .form-control:focus {
+        border-color: var(--main-color);
+        outline: 0;
+        box-shadow: 0 0 0 2px var(--main-color);
+    }
+}
